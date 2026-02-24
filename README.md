@@ -1,5 +1,5 @@
 # Data-Science-coleta_dados_python
-** Coleta de dados do curso Ciência de Dados - EBAC.
+**Coleta de dados do curso Ciência de Dados - EBAC.**
 # Coleta de Dados Históricos do Índice Bovespa
 
 ## Descrição
@@ -14,7 +14,7 @@ Este script utiliza as seguintes bibliotecas Python:
 
 - pandas: Para localizar e manipular tabelas disponíveis no HTML.
 
-**Certifique-se de instalá-las antes de executar o script: "pip install requests beautifulsoup4 pandas", no meu caso, foi necessário utilizar o comando "pip3 install..."
+**Certifique-se de instalá-las antes de executar o script: "pip install requests beautifulsoup4 pandas", no meu caso, foi necessário utilizar o comando "pip3 install..."**
 
 ## Funcionamento do Script:
 
@@ -89,7 +89,7 @@ Faz download de um arquivo a partir de uma URL e salva-o localmente.
 
 ### Arquitetura do Código
 
-** Funções
+**Funções**
 - upload_file():
   Faz upload de um arquivo para o serviço file.io sem autenticação.
   Exibe os detalhes da resposta, incluindo o link para o arquivo enviado.
