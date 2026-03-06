@@ -34,16 +34,16 @@ O projeto tem caráter educacional e serve como base para entender a **primeira 
 ---
 
 ## 📂 Estrutura do Projeto
-coleta-de-dados/
-│
-├── coleta_dados_web.py
-├── coleta_dados_basica.py
-├── coleta_dados_api.py
-├── gerar_dados.py
-├── estudo_dataframe_ciencias.py
-│
-├── Dados.csv
-└── README.md
+    coleta-de-dados/
+    │
+    ├── coleta_dados_web.py
+    ├── coleta_dados_basica.py
+    ├── coleta_dados_api.py
+    ├── gerar_dados.py
+    ├── estudo_dataframe_ciencias.py
+    │
+    ├── Dados.csv
+    └── README.md
 
 ---
   
