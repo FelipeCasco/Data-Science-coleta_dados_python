@@ -1,108 +1,110 @@
 # Data-Science-coleta_dados_python
 **Coleta de dados do curso Ciência de Dados - EBAC.**
-# Coleta de Dados Históricos do Índice Bovespa
+# 📊 Coleta de Dados
 
-## Descrição
-- Este script tem como objetivo acessar a página de dados históricos do índice Bovespa no site Investing.com, realizar o scraping do conteúdo HTML, e, utilizando as bibliotecas BeautifulSoup e pandas, extrair e exibir as tabelas disponíveis na página.
+## 📌 Visão Geral
 
-### Dependências
-Este script utiliza as seguintes bibliotecas Python:
+Este projeto explora diferentes técnicas de **coleta de dados utilizando Python**, abordando métodos comuns utilizados em projetos de ciência de dados para obter informações de diversas fontes.
 
-- requests: Para fazer a requisição HTTP à URL fornecida.
+Foram estudadas abordagens como **consumo de APIs, web scraping, extração de tabelas HTML e geração de dados sintéticos**, permitindo compreender como dados podem ser coletados, estruturados e preparados para análise.
 
-- BeautifulSoup (da biblioteca bs4): Para processar e estruturar o HTML da página.
+O projeto tem caráter educacional e serve como base para entender a **primeira etapa do pipeline de dados: Data Collection**.
 
-- pandas: Para localizar e manipular tabelas disponíveis no HTML.
+---
 
-**Certifique-se de instalá-las antes de executar o script: "pip install requests beautifulsoup4 pandas", no meu caso, foi necessário utilizar o comando "pip3 install..."**
+## 🎯 Objetivos do Projeto
 
-## Funcionamento do Script:
+- Compreender o funcionamento de **requisições HTTP**
+- Realizar **coleta de dados via API**
+- Extrair informações de páginas web através de **Web Scraping**
+- Identificar e extrair **tabelas HTML com Pandas**
+- Simular bases de dados através de **dados sintéticos**
+- Praticar a organização de scripts de coleta de dados
 
-- Requisição HTTP
-- Utiliza a biblioteca requests para enviar uma requisição GET para a URL do Investing.com.
-- A resposta contém o HTML bruto da página.
+---
 
-### Processamento HTML com BeautifulSoup
-- O conteúdo HTML da resposta é processado utilizando BeautifulSoup para permitir a formatação e inspeção da estrutura HTML.
+## 🛠️ Tecnologias Utilizadas
 
-### Extração de Tabelas com pandas
-O script utiliza o método pd.read_html para localizar e extrair todas as tabelas presentes no HTML retornado.
-O número de tabelas encontradas e os primeiros 20 registros da primeira tabela são exibidos.
+- **Python**
+- **Requests** — requisições HTTP e consumo de APIs  
+- **BeautifulSoup (bs4)** — parsing e navegação em HTML  
+- **Pandas** — manipulação e extração de tabelas  
+- **Faker** — geração de dados fictícios para testes  
 
-### Tratamento de Erros
-- Caso a função pd.read_html não consiga localizar tabelas ou processar o conteúdo, o erro será capturado e uma mensagem será exibida.
+---
 
-### Entradas
-Este script não exige entradas do usuário diretamente. A URL da página é definida no código como: "url = 'https://br.investing.com/indices/bovespa-historical-data'"
+## 📂 Estrutura do Projeto
+coleta-de-dados/
+│
+├── coleta_dados_web.py
+├── coleta_dados_basica.py
+├── coleta_dados_api.py
+├── gerar_dados.py
+├── estudo_dataframe_ciencias.py
+│
+├── Dados.csv
+└── README.md
 
-# HTML Scraper
-
-Este script realiza o scraping de páginas HTML para extrair informações específicas como títulos, parágrafos e links. Ele utiliza as bibliotecas requests e BeautifulSoup para buscar e processar o conteúdo de uma página da web.
-
-Funcionalidades:
-
-- Extrai títulos da página (tags '(h2)').
-- Extrai parágrafos da página (tags '(p)').
-- Extrai links da página (tags '(a)'com o atributo href).
-- Conta e exibe o número de títulos, parágrafos e links encontrados.
-
-### Arquitetura do Código
-
-1. Funções:
-- fetch_html(url): Faz a requisição à URL fornecida e retorna o HTML da página.
-- parse_html(html_content): Converte o HTML bruto em um objeto BeautifulSoup para facilitar a extração.
-- extract_titles(soup, tag): Extrai títulos da página com base na tag especificada (padrão: '(h2)').
-- extract_paragraf(soup, tag): Extrai parágrafos da página com base na tag especificada (padrão: '(p)').
-- extract_a(soup, tag): Extrai links da página com base na tag especificada (padrão: '(a)'), incluindo texto e URLs.
-
-2. Função Principal:
-- A função main() organiza o fluxo do script:
-- Faz o download do HTML da página.
-- Processa o HTML.
-- Extrai títulos, parágrafos e links.
-- Exibe os resultados no console.
-
-### Notas
-O URL da página a ser analisada está configurado como: url = 'https://wiki.python.org.br/AprendaMais'
-
-Você pode alterá-lo para processar outras páginas.
-
-Certifique-se de que a página a ser analisada permite scraping e respeite os termos de uso do site.
-
-# File Upload and Download Script
-
-Este script permite realizar upload e download de arquivos em um serviço de hospedagem de arquivos. Ele também suporta uploads autenticados utilizando uma chave de API.
-
-Pré-requisitos
-Certifique-se de que as dependências estão instaladas: 'pip install requests'
-
-### Funcionalidades
-
-- Upload de Arquivo (Público):
-Faz upload de um arquivo para o serviço file.io sem autenticação.
-
-- Upload de Arquivo com Chave de API:
-Permite o envio autenticado de arquivos utilizando uma chave de API.
-
-- Download de Arquivo:
-Faz download de um arquivo a partir de uma URL e salva-o localmente.
-
-### Arquitetura do Código
-
-**Funções**
-- upload_file():
-  Faz upload de um arquivo para o serviço file.io sem autenticação.
-  Exibe os detalhes da resposta, incluindo o link para o arquivo enviado.
+---
   
-- download_file(file_url, output_file='arquivo_baixado.xlsx'):
-  Faz download de um arquivo a partir de uma URL e o salva localmente com o nome especificado.
+**Descrição dos arquivos:**
 
-upload_file_key():
-  Faz upload de um arquivo para o serviço file.io utilizando autenticação via chave de API.
-  Exibe os detalhes da resposta, incluindo o link para o arquivo enviado.
+- **coleta_dados_web.py**  
+  Script de web scraping para extração de títulos, parágrafos e links em páginas HTML.
 
-### Notas
+- **coleta_dados_basica.py**  
+  Exemplo simples de coleta de dados através de requisições HTTP.
 
-- Certifique-se de que a URL do serviço de upload está correta: url='https://file.io/'
+- **coleta_dados_api.py**  
+  Script para interação com API, incluindo upload e download de arquivos.
 
-O script está configurado para enviar arquivos públicos por padrão. Para maior segurança, use a função upload_file_key() com uma chave de API.
+- **gerar_dados.py**  
+  Geração de dados fictícios utilizando a biblioteca Faker para simulações.
+
+- **estudo_dataframe_ciencias.py**  
+  Exploração de tabelas HTML utilizando Pandas.
+
+- **Dados.csv**  
+  Exemplo de dataset utilizado para testes e manipulação.
+
+---
+
+## 🌐 Coleta de Dados via API
+
+Foi utilizada a biblioteca **Requests** para realizar requisições HTTP e interagir com serviços externos.
+
+Foram implementadas funções para:
+
+- **Upload de arquivos**
+- **Upload autenticado com chave de API**
+- **Download de arquivos via URL**
+
+Essas operações simulam cenários comuns em pipelines de dados que envolvem integração com APIs.
+
+---
+
+## 🕸️ Web Scraping
+
+O projeto também explora **extração de informações de páginas web** utilizando a biblioteca **BeautifulSoup**.
+
+Foram analisadas páginas como:
+
+- https://books.toscrape.com (site educacional)
+- https://valor.globo.com
+
+A extração inclui:
+
+- Títulos (`h2`)
+- Parágrafos (`p`)
+- Links (`a`)
+
+Além da identificação da quantidade de elementos encontrados e da análise da estrutura HTML.
+
+---
+
+## 📊 Extração de Tabelas com Pandas
+
+Utilizando o método:
+
+```python
+pd.read_html()
